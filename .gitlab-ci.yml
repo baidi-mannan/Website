@@ -1,0 +1,45 @@
+stages:
+  - build
+  - package
+  - deploy
+
+build:
+  stage: build
+  image: node
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build
+
+docker-build:
+  stage: package
+  when: manual
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -t registry.gitlab.com/solruf/ui:$CI_COMMIT_BRANCH .
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push registry.gitlab.com/solruf/ui:$CI_COMMIT_BRANCH
+
+deploy:
+  stage: deploy
+  when: manual
+  image: ubuntu:latest
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  script:
+    - ssh $USER@dev.solruf.com "docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY"
+    - ssh $USER@dev.solruf.com "docker stop ui || true"
+    - ssh $USER@dev.solruf.com "docker system prune -a -f"
+    - ssh $USER@dev.solruf.com "docker pull registry.gitlab.com/solruf/ui:$CI_COMMIT_BRANCH"
+    - ssh $USER@dev.solruf.com "docker container run -d -v ~:/ssh --name ui -p 443:443 -p 80:80 registry.gitlab.com/solruf/ui:$CI_COMMIT_BRANCH"
+    - ssh $USER@dev.solruf.com "docker logout"
+

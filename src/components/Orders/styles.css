@@ -1,0 +1,29 @@
+/* Override the default material.css styles in here */
+.myorder-form {
+  background: transparent !important;
+  width: 100% !important;
+  color: #4d4d4d !important;
+  border-color: #bfbfbf !important;
+}
+.myorder-form:hover {
+  border-color: black !important;
+}
+.myorder-form:focus {
+  border-color: #ffd05b !important;
+  box-shadow: 0 0 0 1px #ffd05b !important;
+}
+.myorder-form:focus + div:before {
+  color: #ffd05b !important;
+}
+.myorder-form-container .special-label {
+  background: #f2f2f2 !important;
+  color: #4d4d4d !important;
+}
+.myorder-form-container .selected-flag .arrow {
+  left: 29px !important;
+  border-top: 4px solid #4d4d4d !important;
+}
+.myorder-form-container .selected-flag .arrow.up {
+  border-top: none !important;
+  border-bottom: 4px solid #4d4d4d !important;
+}

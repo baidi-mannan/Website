@@ -1,0 +1,41 @@
+button.rec-dot{
+    background-color: rgb(209, 209, 209);
+    box-shadow: 0 0 1px 3px rgba(207, 207, 207, 0.774);
+    display: none;
+  }
+  
+button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+    box-shadow: 0 0 1px 3px rgba(241, 241, 241, 0.5);
+  }
+
+button.cGKbZh:hover:enabled {
+    color: #fff;
+    background-color: #FFD05B;
+    box-shadow: 0 0 2px 0 #333;
+}
+
+button.rec-arrow-right , button.cGKbZh:focus:enabled{
+    background-color: #FFD05B;
+    color: #fff;
+    box-shadow: 2px 2px #c0b7b752;
+    border-radius: 30px;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 45px;
+    min-width: 60px;
+    line-height: 50px;
+}
+
+button.rec-arrow-left{
+    background-color: #4D4D4D;
+    color: #fff;
+    box-shadow: 2px 2px #c0b7b752;
+    border-radius: 30px;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 45px;
+    min-width: 60px;
+    line-height: 50px;
+}

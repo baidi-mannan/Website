@@ -1,0 +1,30 @@
+/* Override the default material.css styles in here */
+.cart-form {
+  background: transparent !important;
+  width: 100% !important;
+  color: white !important;
+  border-color: white !important;
+  padding: 10.5px 14px 10.5px 58px !important;
+}
+.cart-form:hover {
+  border-color: #ffd05b !important;
+}
+.cart-form:focus {
+  border-color: #ffd05b !important;
+  box-shadow: 0 0 0 1px #ffd05b !important;
+}
+.cart-form:focus + div:before {
+  color: #ffd05b !important;
+}
+.cart-form-container .special-label {
+  background: #4d4d4d !important;
+  color: white !important;
+}
+.cart-form-container .selected-flag .arrow {
+  left: 20px !important;
+  border-top: 4px solid white !important;
+}
+.cart-form-container .selected-flag .arrow.up {
+  border-top: none !important;
+  border-bottom: 4px solid white !important;
+}
