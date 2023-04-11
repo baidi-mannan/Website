@@ -462,7 +462,7 @@ const Footer = () => {
           </Grid>
         </Grid>
       </div>
-      <div style={{ textAlign: "center", backgroundColor: "#ffd54f", paddingBottom: "10px", color: "#4D4D4D" }}>
+      {/* <div style={{ textAlign: "center", backgroundColor: "#ffd54f", paddingBottom: "10px", color: "#4D4D4D" }}>
         <Hidden only={["xs"]}>
           <p>
             &copy;<b> SOLRUF INDIA PRIVATE LIMITED</b>. All Rights Reserved
@@ -474,7 +474,7 @@ const Footer = () => {
           </p>
           <p style={{ margin: "0px" }}>All Rights Reserved</p>
         </Hidden>
-      </div>
+      </div> */}
     </div>
   );
 };

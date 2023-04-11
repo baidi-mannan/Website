@@ -17,9 +17,9 @@ import Header from "./components/Common/Header";
 import Footer from "./components/Common/Footer";
 import Blog from "./components/Common/AboutUs";
 // import SingleBlog from "./components/Common/Blog/SingleBlog/SingleBlog";
-import Delhi from "./components/Common/Netmetering/Delhi/Delhi";
-import HomePage from "./components/Common/Netmetering/HomePage/HomePage";
-import SolarInstallation from "./components/Common/Solar Installation/SolarInstallation";
+// import Delhi from "./components/Common/Netmetering/Delhi/Delhi";
+// import HomePage from "./components/Common/Netmetering/HomePage/HomePage";
+// import SolarInstallation from "./components/Common/Solar Installation/SolarInstallation";
 
 
 // SELLER
@@ -27,14 +27,14 @@ import { LandingPage as SellerLandingPage } from "./SELLER/Common/LandingPage";
 import { Header as SellerHeader } from "./SELLER/Common/Header";
 import { AddProduct } from "./SELLER/Products/AddProduct";
 import { MyOrders as SellerOrders } from "./SELLER/Orders/MyOrders";
-import Maharashtra from "./components/Common/Netmetering/Maharashtra/Maharashtra";
-import Gujarat from "./components/Common/Netmetering/Gujarat/Gujarat";
-import WestBengal from "./components/Common/Netmetering/West Bengal/WestBengal";
-import Punjab from "./components/Common/Netmetering/Punjab/Punjab";
-import Karnataka from "./components/Common/Netmetering/Karnataka/Karnataka";
-import Haryana from "./components/Common/Netmetering/Haryana/Haryana";
-import SolarDesign from "./components/Common/Solar Design/SolarDesign";
-import SolarProducts from "./components/Common/Solar Products/SolarProducts";
+// import Maharashtra from "./components/Common/Netmetering/Maharashtra/Maharashtra";
+// import Gujarat from "./components/Common/Netmetering/Gujarat/Gujarat";
+// import WestBengal from "./components/Common/Netmetering/West Bengal/WestBengal";
+// import Punjab from "./components/Common/Netmetering/Punjab/Punjab";
+// import Karnataka from "./components/Common/Netmetering/Karnataka/Karnataka";
+// import Haryana from "./components/Common/Netmetering/Haryana/Haryana";
+// import SolarDesign from "./components/Common/Solar Design/SolarDesign";
+// import SolarProducts from "./components/Common/Solar Products/SolarProducts";
 
 const Router = () => {
   const location = useLocation(); // get the current path
@@ -121,51 +121,51 @@ const Router = () => {
         <Footer />
       </Route>
 
-      {/* Blog */}
+      {/* Blog
       {/* <Route path="/:id" exact component={SingleBlog}></Route> */}
-      <Route path="/DL">
+      {/* <Route path="/DL">
         <Header />
         <Delhi />
         <Footer />
-      </Route>
+      </Route> */} 
 
       {/* Maharashtra */}
-      <Route path="/MH">
+      {/* <Route path="/MH">
         <Header />
         <Maharashtra />
         <Footer />
-      </Route>
+      </Route> */}
 
-      {/* Gujarat */}
+      {/* Gujarat
       <Route path="/GJ">
         <Header />
         <Gujarat />
         <Footer />
-      </Route>
+      </Route> */}
 
       {/* West Bengal */}
-      <Route path="/WB">
+      {/* <Route path="/WB">
         <Header />
         <WestBengal />
         <Footer />
-      </Route>
+      </Route> */}
 
       {/* Punjab */}
-      <Route path="/PB">
+      {/* <Route path="/PB">
         <Header />
         <Punjab />
         <Footer />
-      </Route>
+      </Route> */}
 
       {/* Karnataka */}
-      <Route path="/KN">
+      {/* <Route path="/KN">
         <Header />
         <Karnataka />
         <Footer />
-      </Route>
+      </Route> */}
 
       {/* Haryana */}
-      <Route path="/HY">
+      {/* <Route path="/HY">
         <Header />
         <Haryana />
         <Footer />
@@ -187,13 +187,13 @@ const Router = () => {
         <Header/>
         <SolarDesign/>
         <Footer/>
-      </Route>
+      </Route> */}
 
-      <Route path="/solarproducts">
+      {/* <Route path="/solarproducts">
         <Header/>
         <SolarProducts/>
         <Footer/>
-      </Route>
+      </Route> */}
 
       {/* DEFAULT ROUTE */}
       <Route path="*">

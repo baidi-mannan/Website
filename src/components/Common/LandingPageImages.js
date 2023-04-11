@@ -44,36 +44,25 @@ export const InstallationImages = [
 
 export const RetailImages = [
     {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/1.png`
+        imgLink: `Assets/LandingPage/HomePage/Solar Retail/earring.jpg`
     },
     {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/2.png`
+        imgLink: `Assets/LandingPage/HomePage/Solar Retail/ladki.jpg`
     },
     {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/3.png`
+        imgLink: `Assets/LandingPage/HomePage/Solar Retail/socks.jpg`
     },
     {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/4.png`
+        imgLink: `Assets/LandingPage/HomePage/Solar Retail/mobile_cover.jpg`
     },
     {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/5.png`
+        imgLink: `Assets/LandingPage/HomePage/Solar Retail/shoes.jpg`
     },
     {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/6.png`
+        imgLink: `Assets/LandingPage/HomePage/Solar Retail/shoes.jpg`
+    },    {
+        imgLink: `Assets/LandingPage/HomePage/Solar Retail/shoes.jpg`
     },
-    {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/7.png`
-    },
-    {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/8.png`
-    },
-    {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/9.png`
-    },
-    {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/10.png`
-    },
-    {
-        imgLink: `Assets/LandingPage/HomePage/Solar Retail/11.png`
-    },
+    
+    
 ];

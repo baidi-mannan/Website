@@ -303,7 +303,7 @@ const Header = ({ cart }) => {
                 About us
               </NavLink>
             </Button>
-            {/* -----------blog------------ */}
+            {/* -----------blog------------
             <div style={{ position: "relative" }}>
               <Button
                 aria-controls="simple-menu"
@@ -345,7 +345,7 @@ const Header = ({ cart }) => {
                   </NavLink>
                 </MenuItem>
               </Menu>
-            </div>
+            </div> */}
             {/* --------------- */}
             <Button color="primary" size="large" style={{ fontSize: "small", color: "white" }}>
               <NavLink to="/contact" className="main-nav" activeClassName="main-nav-active" style={{ color: "white" }}>

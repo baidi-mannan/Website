@@ -23,18 +23,18 @@ const useStyles = makeStyles((theme)=>({
     root : {
         width: "100%",
         height: "70vh",
-        backgroundImage: "url(/Assets/LandingPage/landing_page_background.png)",
+        backgroundImage: "url(/Assets/LandingPage/jk.jpg)",
         backgroundSize: "100% 100%",
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
         [theme.breakpoints.down("xs")]: {
-            backgroundImage: "url(/Assets/LandingPage/landing_page_mobile.png)",
+            backgroundImage:"url(/Assets/LandingPage/jk.jpg)",
             backgroundSize: "100% 100%",
         },
     },
     heading : {
         color:"white",
-        paddingTop:"19vh",
+        paddingTop:"5vh",
         paddingLeft:"10vw",
         fontSize:"calc(15px + 2vw)",
         [theme.breakpoints.down("xs")]: {
@@ -66,16 +66,7 @@ const useStyles = makeStyles((theme)=>({
   themeColor: {
     color: "#E6BC36",
   },  
-    carouselWrapper : {
-        height: "fit-content",
-        width: "40vw",
-        [theme.breakpoints.down("sm")] : {
-            width:"100vw"
-        },
-        "& button" : {
-            display: "none",
-        },
-    },
+
     firstLayer:{
         '& .MuiChip-root': {
           justifyContent: 'flex-start',
@@ -92,6 +83,25 @@ const useStyles = makeStyles((theme)=>({
     btnLabel:{
         color: 'white',
         padding: "2px",
+    },
+    card:
+    {
+   
+
+        backgroundColor: "white",
+
+        border: "2px solid black",
+
+       
+    },
+    cardImg:{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        position: "absolute",
+        top: "0",
+        left: "0",
+
     }
 }))
 
@@ -103,75 +113,52 @@ const LandingPage = () => {
         <div>
             <div className={classes.root}>
                 <Typography className={classes.heading} >
-                    <strong>MAKING A BETTER TOMORROW </strong>
+                    <strong>SHOP FOR YOURSELF </strong>
                 </Typography>
                 <Typography className={classes.TypographyPadding} style={{ color: "white", fontSize: "calc(15px + 2vw)" }}>
-                WITH SOLAR ACCESSIBILITY
+                WITH THIS WEBSITE
                 </Typography>
                 <div className={classes.button}>
                     <Link to='/products'>
                         <CustomButton outline size="large" color="primary">
-                            SHOP
+                            SHOP NOW!
                         </CustomButton>
                     </Link>   
                 </div>
             </div>
             <Grid container>
-                <Grid item xs="12" container style={{minHeight:"60vh",height:"auto",backgroundColor:"#F2F2F2"}}>
-                    <Grid item xs="12" sm="12" md="6" style={{ display:"flex", alignItems:"center",padding:"5vh 5vw"}}>
-                        <Card elevation={0} style={{backgroundColor:"#F2F2F2"}}>
-                            <CardContent >
-                                <Typography className={classes.themeColor} style={{position:"relative",bottom:"5px"}} variant="h6" >
-                                    <strong>SOLRUF</strong>
-                                </Typography>
-                                <Typography variant="h4" style={{color:"#4D4D4D"}}>
-                                    <strong>RETAIL</strong>
-                                </Typography>
-                                <Typography style={{textAlign:"justify"}}>
-                                A photovoltaic system uses multiple components to convert solar energy from the sun to electrical energy. We offer a range of solar products required for a photovoltaic rooftop installation system including solar panels, solar batteries, solar inverters, cables, alternating current and direct current distribution box (ACDB-DCDB) etc.. A specialized solar system requires a curated list and specifications of components suitable for the corresponding situation. Have a look at our catalogue and let us know if you need anything else.                                  
-                                </Typography>
-                            </CardContent>
-                            <CardActions >
-                                <Link to='/aboutus'>
-                                    <CustomButton color="secondary" size="medium">Know More</CustomButton>
-                                </Link>
-                                <Link to='/products'>
-                                    <CustomButton outline color="primary" size="medium">Shop</CustomButton>
-                                </Link>
-                            </CardActions>
-                        </Card>
-                    </Grid>    
-                    <Grid item xs="12" sm="6" style={{display:"flex", alignItems:"center",justifyContent:"center",padding:"5vh 5vw"}}>
-                        <Card elevation={3} style={{maxWidth:"400px",width:"100%",height:"auto",border:"2px solid #ffd54f",padding:"15px 15px 15px 15px"}}>
-                            <div className={classes.carouselWrapper} style={{position:"relative",width:"100%",height:"100%"}}>
+                <Grid container xs="12" style={{backgroundColor:"#F2F2F2", alignItems: "center",display:"flex"}}>
+
+                        <Card elevation={3} style={{height:"90%"}}>
+                            
                                 <Slider
                                 dots={false}
                                 arrows={false}
-                                slidesToShow={1}
-                                swipeToSlide={true}
+                                slidesToShow={4}
                                 infinite={true}
                                 autoplay={true}
-                                autoplaySpeed={5000}
-                                cssEase="linear"
+                                autoplaySpeed={500}
+                
+                                pauseOnHover={true}
+                               
+                          
                                 >
                                 {
                                     RetailImages.map((image,index) => {
-                                        return <CardMedia
-                                        key={index}
-                                        component="img"
-                                        image={image.imgLink}
-                                        title="solar panel scenery"
-                                        style={{width:"100%",height:320}}
-                                    />;
+                                        return <div className={classes.card}>
+                            
+                                        <img  className='cardImg' src={image.imgLink} alt="Couldn't find "/>
+                                      
+                                    </div>
                                     })
                                 }
                                 </Slider>
-                            </div>
+
                         </Card>
-                    </Grid>
+                    
                 </Grid>
                 <Grid xs="12" container style={{backgroundColor:"white",minHeight:"60vh",height:"auto"}}>    
-                    <Grid item xs="12" sm="6" style={{display:"flex", alignItems:"center",justifyContent:"center",padding:"5vh 5vw"}}>
+                    {/* <Grid item xs="12" sm="6" style={{display:"flex", alignItems:"center",justifyContent:"center",padding:"5vh 5vw"}}>
                         <Card elevation={3} style={{maxWidth:"400px",width:"100%",height:"auto",border:"2px solid #ffd54f",padding:"15px 15px 15px 15px"}}>
                             <div className={classes.carouselWrapper} style={{position:"relative",width:"100%",height:"100%"}}>
                                 <Slider
@@ -198,8 +185,8 @@ const LandingPage = () => {
                                 </Slider>
                             </div>
                         </Card>
-                    </Grid>
-                    <Grid item xs="12" sm="12" md="6" style={{display:"flex", alignItems:"center",padding:"5vh 5vw"}}>
+                    </Grid> */}
+                    {/* <Grid item xs="12" sm="12" md="6" style={{display:"flex", alignItems:"center",padding:"5vh 5vw"}}>
                         <Card elevation={0} style={{backgroundColor:"white"}}>
                             <CardContent>
                                 <Typography className={classes.themeColor} style={{position:"relative",bottom:"5px"}} variant="h6" >
@@ -221,10 +208,10 @@ const LandingPage = () => {
                                 </Link>
                             </CardActions>
                         </Card>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
-                <Grid item xs="12" container style={{minHeight:"60vh",height:"auto",backgroundColor:"#F2F2F2"}}>
-                    <Grid item xs="12" sm="12" md="6" style={{ display:"flex", alignItems:"center",padding:"5vh 5vw"}}>
+                {/* <Grid item xs="12" container style={{minHeight:"60vh",height:"auto",backgroundColor:"#F2F2F2"}}> */}
+                    {/* <Grid item xs="12" sm="12" md="6" style={{ display:"flex", alignItems:"center",padding:"5vh 5vw"}}>
                         <Card elevation={0} style={{backgroundColor:"#F2F2F2"}}>
                             <CardContent >
                                 <Typography className={classes.themeColor} style={{position:"relative",bottom:"5px"}} variant="h6" >
@@ -246,8 +233,8 @@ const LandingPage = () => {
                                 </Link>
                             </CardActions>
                         </Card>
-                    </Grid>    
-                    <Grid item xs="12" sm="6" style={{display:"flex", alignItems:"center",justifyContent:"center",padding:"5vh 5vw"}}>
+                    </Grid>     */}
+                    {/* <Grid item xs="12" sm="6" style={{display:"flex", alignItems:"center",justifyContent:"center",padding:"5vh 5vw"}}>
                         <Card elevation={3} style={{maxWidth:"400px",width:"100%",height:"auto",border:"2px solid #ffd54f",padding:"15px 15px 15px 15px"}}>
                             <div className={classes.carouselWrapper} style={{position:"relative",width:"100%",height:"100%"}}>
                                 <Slider
@@ -274,36 +261,29 @@ const LandingPage = () => {
                                 </Slider>
                             </div>
                         </Card>
-                    </Grid>
-                </Grid>
+                    </Grid> */}
+                {/* </Grid> */}
             </Grid>
-            <div className={classes.gallery}>
-                <ProductGallery />
-            </div>
-            {/* FAQ Section */}
-            <div>
-              <FaqSection />
-            </div>
-            {/* footer */}
+
             <div className={classes.firstLayer}>
                 <Hidden only={['xs']}>
                     <Grid container  style={{}}>
-                    <Grid item xs={3} style={{backgroundColor: "#4c4c4c", borderRight: '0.15em solid #FFD05B', padding: "60px",textAlign:"center" }}>
+                    <Grid item xs={4} style={{backgroundColor: "#4c4c4c", borderRight: '0.15em solid #FFD05B', padding: "60px",textAlign:"center" }}>
                         <Typography variant="h3"><ThumbUpIcon color="primary" fontSize="large" /></Typography>
                         <Typography variant="h4" color="primary"><strong>2500</strong></Typography>
                         <Typography variant="body2" style={{color:"rgb(197 197 197)"}}>Happy Clients</Typography>
                     </Grid>
-                    <Grid item xs={3} style={{backgroundColor: "#4c4c4c", borderRight: '0.15em solid #FFD05B', padding: "60px" ,textAlign:"center" }}>
+                    {/* <Grid item xs={3} style={{backgroundColor: "#4c4c4c", borderRight: '0.15em solid #FFD05B', padding: "60px" ,textAlign:"center" }}>
                     <Typography variant="h3"><BatteryChargingFullIcon color="primary" fontSize="large" /></Typography>
                         <Typography variant="h4" color="primary"><strong>300</strong></Typography>
                         <Typography variant="body2" style={{color:"rgb(197 197 197)"}}>Inverter Places</Typography>
-                    </Grid>
-                    <Grid item xs={3} style={{backgroundColor: "#4c4c4c",borderRight: '0.15em solid #FFD05B', padding: "60px" , textAlign:"center" }}>
+                    </Grid> */}
+                    <Grid item xs={4} style={{backgroundColor: "#4c4c4c",borderRight: '0.15em solid #FFD05B', padding: "60px" , textAlign:"center" }}>
                     <Typography variant="h3"><PeopleIcon color="primary" fontSize="large" /></Typography>
                         <Typography variant="h4" color="primary"><strong>120</strong></Typography>
                         <Typography variant="body2" style={{color:"rgb(197 197 197)"}}>Teammates</Typography>
                     </Grid>
-                    <Grid item xs={3} style={{backgroundColor: "#4c4c4c",borderRight: '0em solid #FFD05B', padding: "60px" , textAlign:"center" }}>
+                    <Grid item xs={4} style={{backgroundColor: "#4c4c4c",borderRight: '0em solid #FFD05B', padding: "60px" , textAlign:"center" }}>
                     <Typography variant="h3"><StoreIcon color="primary" fontSize="large" /></Typography>
                         <Typography variant="h4" color="primary"><strong>30</strong></Typography>
                         <Typography variant="body2" style={{color:"rgb(197 197 197)"}}>Stores</Typography>
